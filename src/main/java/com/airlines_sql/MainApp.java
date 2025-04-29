@@ -1,5 +1,6 @@
 package com.airlines_sql;
 
+import com.airlines_sql.utils.DatabaseUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,6 +17,7 @@ public class MainApp extends Application {
     }
 
     public static void main(String[] args) {
+        DatabaseUtil.resetDatabase();
         launch(args);
     }
 }
