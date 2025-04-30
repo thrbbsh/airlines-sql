@@ -135,15 +135,6 @@ CREATE TABLE cargo_flight (
     dimensions VARCHAR(20)
 );
 
-CREATE TABLE promo_code (
-    promo_id SERIAL PRIMARY KEY,
-    code VARCHAR(20) NOT NULL UNIQUE,
-    description TEXT,
-    discount_pct DECIMAL(5,2) NOT NULL,
-    valid_from DATE NOT NULL,
-    valid_to DATE NOT NULL
-);
-
 CREATE TABLE review (
     review_id SERIAL PRIMARY KEY,
     customer_id INT NOT NULL REFERENCES customer(customer_id),
