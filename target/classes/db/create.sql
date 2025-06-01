@@ -18,7 +18,8 @@ CREATE TABLE airport (
     name VARCHAR(100) NOT NULL,
     city VARCHAR(50) NOT NULL,
     country VARCHAR(50) NOT NULL
-);
+)
+
 
 CREATE TABLE route (
     route_id SERIAL PRIMARY KEY,
@@ -132,15 +133,6 @@ CREATE TABLE cargo_flight (
     description TEXT,
     weight_kg DECIMAL(8,2),
     dimensions VARCHAR(20)
-);
-
-CREATE TABLE promo_code (
-    promo_id SERIAL PRIMARY KEY,
-    code VARCHAR(20) NOT NULL UNIQUE,
-    description TEXT,
-    discount_pct DECIMAL(5,2) NOT NULL,
-    valid_from DATE NOT NULL,
-    valid_to DATE NOT NULL
 );
 
 CREATE TABLE review (
