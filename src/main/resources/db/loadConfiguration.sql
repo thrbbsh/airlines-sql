@@ -1,0 +1,24 @@
+-- -- 1) Копируем данные в country
+-- COPY country (country_id, name, iso_code)
+--     FROM '/путь/до/countries.csv' WITH (FORMAT csv, HEADER true);
+--
+-- -- После COPY скорректируем sequence для country_country_id_seq
+-- -- чтобы следующий serial-INSERT взял правильное значение:
+-- SELECT setval(pg_get_serial_sequence('country', 'country_id'),
+--               (SELECT MAX(country_id) FROM country));
+--
+-- -- 2) Копируем данные в city
+-- COPY city (city_id, name, country_id)
+--     FROM '/путь/до/cities.csv' WITH (FORMAT csv, HEADER true);
+--
+-- -- Корректируем sequence для city_city_id_seq
+-- SELECT setval(pg_get_serial_sequence('city', 'city_id'),
+--               (SELECT MAX(city_id) FROM city));
+--
+-- -- 3) Копируем данные в airport
+-- COPY airport (airport_id, name, city_id)
+--     FROM '/путь/до/airports.csv' WITH (FORMAT csv, HEADER true);
+--
+-- -- Корректируем sequence для airport_airport_id_seq
+-- SELECT setval(pg_get_serial_sequence('airport', 'airport_id'),
+--               (SELECT MAX(airport_id) FROM airport));
