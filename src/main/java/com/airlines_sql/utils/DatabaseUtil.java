@@ -7,8 +7,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;  // импорт для Statement
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseUtil {
+    private static final String DB = "airlinedb";
     private static final String URL  = "jdbc:postgresql://localhost:5432/airlinedb";
     private static final String USER = "volochai";
     private static final String PASS = "254849";
@@ -26,43 +29,52 @@ public class DatabaseUtil {
     }
 
     /** Сбрасывает базу в "чистое" состояние */
-    public static void resetDatabase() {
-        executeSqlScript("/db/clear.sql");
-        executeSqlScript("/db/create.sql");
+    public static void resetDatabase() throws Exception {
+        executeSqlScript("/Users/volochai/prog/airlines-sql/src/main/resources/db/clear.sql");
+        executeSqlScript("/Users/volochai/prog/airlines-sql/src/main/resources/db/create.sql");
     }
 
-    private static void executeSqlScript(String resourcePath) {
-        try (Connection conn = getConnection();
-             Statement stmt = conn.createStatement();
-             InputStream is = DatabaseUtil.class.getResourceAsStream(resourcePath);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+    public static void executeSqlScript(String scriptPath) throws Exception {
+        List<String> command = new ArrayList<String>();
 
-            if (is == null) {
-                System.err.println("Could not find file: " + resourcePath);
-                return;
-            }
+        // Если пароль передавать через переменную окружения PGPASSWORD, то не придётся вводить его вручную.
+        // Устанавливаем переменную окружения PGPASSWORD=usernamePassword
+        ProcessBuilder pb = new ProcessBuilder();
 
-            StringBuilder sql = new StringBuilder();
+        // Формируем команду: psql -U user -d dbName -f scriptPath
+        command.add("psql");
+        command.add("-U");
+        command.add(USER);
+        command.add("-d");
+        command.add(DB);
+        command.add("-f");
+        command.add(scriptPath);
+
+        pb.command(command);
+
+        // Передаём пароль через PGPASSWORD, чтобы psql не спросил его интерактивно
+        if (PASS != null && !PASS.isEmpty()) {
+            pb.environment().put("PGPASSWORD", PASS);
+        }
+
+        // Опционально: перенаправляем поток ошибок/вывода в консоль Java, чтобы видеть логи psql
+        pb.redirectErrorStream(true);
+
+        Process process = pb.start();
+
+        // Считываем и печатаем строку за строкой вывод psql
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                sql.append(line).append("\n");
-                if (line.trim().endsWith(";")) {
-                    String command = sql.toString();
-//                    System.out.println("Executing SQL:\n" + command); // DEBUG
-
-                    try {
-                        stmt.execute(command);
-                    } catch (Exception e) {
-                        System.err.println("SQL ERROR:\n" + command);
-                        e.printStackTrace();
-                    }
-
-                    sql.setLength(0);
-                }
+                System.out.println(line);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        }
+
+        int exitCode = process.waitFor();
+        if (exitCode != 0) {
+            throw new RuntimeException("psql exited with code " + exitCode);
         }
     }
+
 
 }
