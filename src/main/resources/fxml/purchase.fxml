@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<GridPane xmlns="http://javafx.com/javafx/11.0.2"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.airlines_sql.controllers.PurchaseController"
+          hgap="10" vgap="10">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Ticket Purchase" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2">
+        <font><Font size="18"/></font>
+    </Label>
+
+    <Label text="Fare class:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="fareCombo" prefWidth="200" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Select seat:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="seatCombo" prefWidth="200" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="Available seats:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <Label fx:id="availableSeatsLabel" text="0" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="Price, $:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="totalPriceField" editable="false" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+ 
+    <Button text="Buy" fx:id="buyButton" onAction="#handleBuy" prefWidth="100"
+            GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+</GridPane>

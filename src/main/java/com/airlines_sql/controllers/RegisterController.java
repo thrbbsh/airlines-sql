@@ -51,7 +51,6 @@ public class RegisterController {
 		String password  = passwordField.getText();
 		String confirm   = confirmPasswordField.getText();
 
-		// Проверка обязательных полей на стороне приложения
 		if (firstName.isEmpty() || lastName.isEmpty() ||
 				birthDate == null || email.isEmpty() ||
 				username.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
@@ -60,6 +59,7 @@ public class RegisterController {
 			errorLabel.setText("Fill in all required fields");
 			return;
 		}
+
 		if (!password.equals(confirm)) {
 			errorLabel.setTextFill(Color.RED);
 			errorLabel.setText("Passwords do not match");
@@ -72,7 +72,6 @@ public class RegisterController {
 			return;
 		}
 
-		// Хешируем пароль
 		String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
 		Connection conn = null;
@@ -84,7 +83,6 @@ public class RegisterController {
 			conn = DatabaseUtil.getConnection();
 			conn.setAutoCommit(false);
 
-			// 1) Вставляем customer. Если триггер сработает – бросит SQLException
 			String insertCustomerSQL =
 					"INSERT INTO customer (first_name, last_name, birth_date, email, phone) " +
 							"VALUES (?, ?, ?, ?, ?) RETURNING customer_id";
@@ -95,7 +93,7 @@ public class RegisterController {
 			psCust.setString(4, email);
 			psCust.setString(5, phone);
 
-			rs = psCust.executeQuery();  // здесь, если first_name = '1234', триггер выдаст PSQLException
+			rs = psCust.executeQuery();
 			int customerId;
 			if (rs.next()) {
 				customerId = rs.getInt("customer_id");
@@ -105,7 +103,6 @@ public class RegisterController {
 			rs.close();
 			psCust.close();
 
-			// 2) Вставляем app_user – без валидации триггером (роль USER, хеш)
 			String insertUserSQL =
 					"INSERT INTO app_user (username, password_hash, role, customer_id) " +
 							"VALUES (?, ?, 'USER', ?)";
@@ -119,11 +116,9 @@ public class RegisterController {
 
 			conn.commit();
 
-			// Успешная регистрация
 			errorLabel.setTextFill(Color.GREEN);
 			errorLabel.setText("Registration successful!");
 
-			// Блокируем форму после успеха
 			registerButton.setDisable(true);
 			firstNameField.setDisable(true);
 			lastNameField.setDisable(true);
@@ -138,13 +133,11 @@ public class RegisterController {
 			if (conn != null) {
 				try { conn.rollback(); } catch (SQLException ex) { ex.printStackTrace(); }
 			}
-			// Сырой текст ошибки (может содержать несколько строк), разделяем по "\n" и берём только первую
 			String fullMessage = e.getMessage();
-			String firstLine = fullMessage.split("\\R")[0]; // \\R — любой разделитель строки
+			String firstLine = fullMessage.split("\\R")[0];
 			errorLabel.setTextFill(Color.RED);
 			errorLabel.setText(firstLine);
 		} finally {
-			// Закрываем ресурсы
 			try { if (rs != null) rs.close(); } catch (SQLException ignored) {}
 			try { if (psCust != null) psCust.close(); } catch (SQLException ignored) {}
 			try { if (psUser != null) psUser.close(); } catch (SQLException ignored) {}

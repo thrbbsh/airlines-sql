@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.airlines_sql.controllers.MainMenuController"
+      spacing="10" alignment="CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Button fx:id="btnMyTickets"
+            text="My Tickets"
+            prefWidth="200"
+            onAction="#handleMyTickets"/>
+
+    <Button fx:id="btnPurchase"
+            text="Search/Purchase Ticket"
+            prefWidth="200"
+            onAction="#handlePurchase"/>
+
+    <Button fx:id="btnManageAircraft"
+            text="Manage Aircraft"
+            prefWidth="200"
+            onAction="#handleManageAircraft"
+            visible="false"/>
+
+    <Button fx:id="btnCreateFlight"
+            text="Create Flight"
+            prefWidth="200"
+            onAction="#handleCreateFlight"
+            visible="false"/>
+
+    <Button fx:id="btnAssignAircraft"
+            text="Assign Aircraft to Flights"
+            prefWidth="200"
+            onAction="#handleAssignAircraft"
+            visible="false"/>
+
+    <Button fx:id="btnManageIncidents"
+            text="Manage Incidents"
+            prefWidth="200"
+            onAction="#handleManageIncidents"
+            visible="false"/>
+
+    <Button fx:id="btnCreateSchedule"
+            text="Create Schedule"
+            prefWidth="200"
+            onAction="#handleCreateSchedule"
+            visible="false"/>
+
+    <Button fx:id="btnLogout"
+            text="Logout"
+            prefWidth="200"
+            onAction="#handleLogout"/>
+</VBox>
