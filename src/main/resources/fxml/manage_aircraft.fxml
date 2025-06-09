@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+
+<GridPane xmlns="http://javafx.com/javafx/11.0.2"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.airlines_sql.controllers.ManageAircraftController"
+          hgap="10" vgap="10">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Aircraft Management"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"
+           GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3"/>
+
+    <Label text="Total aircraft:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <Label fx:id="lblCount" text="0" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <TableView fx:id="tblAircraft" prefWidth="600" prefHeight="250"
+               GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="3">
+        <columns>
+            <TableColumn fx:id="colAircraftId"    text="Aircraft ID"        prefWidth="100"/>
+            <TableColumn fx:id="colModelName"     text="Model"              prefWidth="200"/>
+            <TableColumn fx:id="colStatus"        text="Status"             prefWidth="150"/>
+            <TableColumn fx:id="colManufacture"   text="Manufacture Date"    prefWidth="200"/>
+        </columns>
+    </TableView>
+
+    <Label text="Register a new aircraft"
+           style="-fx-font-size: 16px; -fx-font-weight: bold;"
+           GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="3">
+        <GridPane.margin>
+            <Insets top="20"/>
+        </GridPane.margin>
+    </Label>
+
+    <Label text="Model:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="cmbModel" prefWidth="200"
+              promptText="Select a model"
+              GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Label text="Manufacture date:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <DatePicker fx:id="dpManufacture"
+                promptText="DD.MM.YYYY"
+                GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <Button fx:id="btnRegister" text="Register"
+            onAction="#handleRegister"
+            prefWidth="150"
+            GridPane.rowIndex="6" GridPane.columnIndex="1">
+        <GridPane.margin>
+            <Insets top="10"/>
+        </GridPane.margin>
+    </Button>
+</GridPane>

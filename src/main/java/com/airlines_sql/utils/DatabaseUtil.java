@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;  // импорт для Statement
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,20 +28,17 @@ public class DatabaseUtil {
         return DriverManager.getConnection(URL, USER, PASS);
     }
 
-    /** Сбрасывает базу в "чистое" состояние */
     public static void resetDatabase() throws Exception {
         executeSqlScript("/Users/volochai/prog/airlines-sql/src/main/resources/db/clear.sql");
         executeSqlScript("/Users/volochai/prog/airlines-sql/src/main/resources/db/create.sql");
+        executeSqlScript("/Users/volochai/prog/airlines-sql/src/main/resources/db/loadConfiguration.sql");
     }
 
     public static void executeSqlScript(String scriptPath) throws Exception {
-        List<String> command = new ArrayList<String>();
+        List<String> command = new ArrayList<>();
 
-        // Если пароль передавать через переменную окружения PGPASSWORD, то не придётся вводить его вручную.
-        // Устанавливаем переменную окружения PGPASSWORD=usernamePassword
         ProcessBuilder pb = new ProcessBuilder();
 
-        // Формируем команду: psql -U user -d dbName -f scriptPath
         command.add("psql");
         command.add("-U");
         command.add(USER);
@@ -52,17 +49,14 @@ public class DatabaseUtil {
 
         pb.command(command);
 
-        // Передаём пароль через PGPASSWORD, чтобы psql не спросил его интерактивно
         if (PASS != null && !PASS.isEmpty()) {
             pb.environment().put("PGPASSWORD", PASS);
         }
 
-        // Опционально: перенаправляем поток ошибок/вывода в консоль Java, чтобы видеть логи psql
         pb.redirectErrorStream(true);
 
         Process process = pb.start();
 
-        // Считываем и печатаем строку за строкой вывод psql
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
             String line;
             while ((line = reader.readLine()) != null) {

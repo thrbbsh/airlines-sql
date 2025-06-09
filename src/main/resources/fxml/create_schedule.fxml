@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airlines_sql.controllers.CreateScheduleController"
+      spacing="15.0" alignment="TOP_CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Create New Flight Schedule">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+
+    <GridPane hgap="10" vgap="12" maxWidth="Infinity">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="120.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <Label text="Departure Airport:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <ComboBox fx:id="departureAirportComboBox" prefWidth="300.0" promptText="Select departure airport" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="Arrival Airport:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <ComboBox fx:id="arrivalAirportComboBox" prefWidth="300.0" promptText="Select arrival airport" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+        <Label text="Departure Time:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <TextField fx:id="departureTimeField" promptText="HH:MM (e.g., 08:30)" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+        <Label text="Arrival Time:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <TextField fx:id="arrivalTimeField" promptText="HH:MM (e.g., 10:45)" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+        <Label text="Days of Week:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <HBox fx:id="daysOfWeekBox" spacing="10" alignment="CENTER_LEFT" GridPane.rowIndex="4" GridPane.columnIndex="1">
+            <CheckBox fx:id="monCheckbox" text="Mon" />
+            <CheckBox fx:id="tueCheckbox" text="Tue" />
+            <CheckBox fx:id="wedCheckbox" text="Wed" />
+            <CheckBox fx:id="thuCheckbox" text="Thu" />
+            <CheckBox fx:id="friCheckbox" text="Fri" />
+            <CheckBox fx:id="satCheckbox" text="Sat" />
+            <CheckBox fx:id="sunCheckbox" text="Sun" />
+        </HBox>
+
+    </GridPane>
+
+    <Button fx:id="createScheduleButton" text="Create Schedule and Flights" onAction="#handleCreateSchedule" disable="true">
+        <VBox.margin>
+            <Insets top="20.0" />
+        </VBox.margin>
+    </Button>
+
+</VBox>

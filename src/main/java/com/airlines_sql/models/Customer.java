@@ -18,14 +18,12 @@ public class Customer {
 		this.phone.set(phone);
 	}
 
-	// Геттеры для свойств (возвращают значения)
 	public String getFirstName() { return firstName.get(); }
 	public String getLastName()  { return lastName.get(); }
 	public LocalDate getBirthDate() { return birthDate.get(); }
 	public String getEmail()    { return email.get(); }
 	public String getPhone()    { return phone.get(); }
 
-	// Свойства (необязательно, но позволяют привязываться к ним напрямую)
 	public StringProperty firstNameProperty() { return firstName; }
 	public StringProperty lastNameProperty()  { return lastName;  }
 	public ObjectProperty<LocalDate> birthDateProperty() { return birthDate; }

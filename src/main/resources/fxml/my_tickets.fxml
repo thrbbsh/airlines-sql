@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.airlines_sql.controllers.MyTicketsController"
+      spacing="10" alignment="CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <TableView fx:id="ticketsTable" prefWidth="900" prefHeight="400">
+        <columns>
+            <TableColumn fx:id="colTicketId"     text="Ticket ID"        prefWidth="80"/>
+            <TableColumn fx:id="colInstanceId"   text="Flight ID"        prefWidth="80"/>
+            <TableColumn fx:id="colOrigin"       text="Origin"           prefWidth="100"/>
+            <TableColumn fx:id="colDestination"  text="Destination"      prefWidth="100"/>
+            <TableColumn fx:id="colDeparture"    text="Departure Time"   prefWidth="140"/>
+            <TableColumn fx:id="colArrival"      text="Arrival Time"     prefWidth="140"/>
+            <TableColumn fx:id="colSeat"         text="Seat"             prefWidth="80"/>
+            <TableColumn fx:id="colFareClass"    text="Class"            prefWidth="80"/>
+            <TableColumn fx:id="colPrice"        text="Price ($)"        prefWidth="80"/>
+            <TableColumn fx:id="colBookingDate"  text="Booking Date"     prefWidth="120"/>
+            <TableColumn fx:id="colStatus"       text="Status"           prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

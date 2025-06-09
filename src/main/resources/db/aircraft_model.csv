@@ -1,0 +1,8 @@
+model_id,name,passenger_count,range_km
+1,"Airbus A320",150,6150
+2,"Airbus A350-900",325,15000
+3,"Boeing 777-300ER",365,14685
+4,"Boeing 737-800",160,5665
+5,"Boeing 737 MAX 8",178,6570
+6,"Boeing 767-300ER",269,11000
+7,"Boeing 787-8",242,13650

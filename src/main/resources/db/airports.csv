@@ -1,0 +1,194 @@
+airport_id,name,airport_iata,city_id
+1,Tirana Nënë Tereza Airport,TIA,1
+2,Vlorë Airport,VLO,2
+3,Andorra–La Seu d’Urgell Airport,LEU,3
+4,Andorra–La Seu d’Urgell Airport,LEU,4
+5,Zvartnots Airport,EVN,5
+6,Shirak Airport,LWN,6
+7,Vienna International Airport,VIE,7
+8,Salzburg Airport,SZG,8
+9,Innsbruck Airport,INN,9
+10,Graz Airport,GRZ,10
+11,Heydar Aliyev Airport,GYD,11
+12,Nakhchivan Airport,NAJ,12
+13,Minsk National Airport,MSQ,13
+14,Gomel Airport,GME,14
+15,Grodno Airport,GNA,15
+16,Brussels Airport,BRU,16
+17,Charleroi Airport,CRL,17
+18,Antwerp Airport,ANR,18
+19,Sarajevo Airport,SJJ,19
+20,Mostar Airport,OMO,20
+21,Banja Luka Airport,BNX,21
+22,Sofia Airport,SOF,22
+23,Varna Airport,VAR,23
+24,Burgas Airport,BOJ,24
+25,Zagreb Airport,ZAG,25
+26,Split Airport,SPU,26
+27,Dubrovnik Airport,DBV,27
+28,Larnaca Airport,LCA,28
+29,Paphos Airport,PFO,29
+30,Václav Havel Prague Airport,PRG,30
+31,Brno–Tuřany Airport,BRQ,31
+32,Ostrava Airport,OSR,32
+33,Copenhagen Airport,CPH,33
+34,Aarhus Airport,AAR,34
+35,Billund Airport,BLL,35
+36,Lennart Meri Tallinn Airport,TLL,36
+37,Tartu Airport,TAY,37
+38,Helsinki Airport,HEL,38
+39,Turku Airport,TKU,39
+40,Rovaniemi Airport,RVN,40
+41,Charles de Gaulle Airport,CDG,41
+42,Orly Airport,ORY,41
+43,Beauvais–Tillé Airport,BVA,41
+44,Provence/Marseille Airport,MRS,42
+45,Saint-Exupéry Airport,LYS,43
+46,Blagnac Airport,TLS,44
+47,Mérignac Airport,BOD,45
+48,Tbilisi Airport,TBS,46
+49,Batumi Airport,BUS,47
+50,Berlin Brandenburg Airport,BER,48
+51,Munich Airport,MUC,49
+52,Frankfurt Airport,FRA,50
+53,Hamburg Airport,HAM,51
+54,Düsseldorf Airport,DUS,52
+55,Cologne/Bonn Airport,CGN,53
+56,Stuttgart Airport,STR,54
+57,Hannover Airport,HAJ,55
+58,Nuremberg Airport,NUE,56
+59,Athens Airport,ATH,57
+60,Thessaloniki Airport,SKG,58
+61,Heraklion Airport,HER,59
+62,Chania Airport,CHQ,60
+63,Rhodes Airport,RHO,61
+64,Corfu Airport,CFU,62
+65,Kalamata Airport,KLX,63
+66,Budapest Airport,BUD,64
+67,Debrecen Airport,DEB,65
+68,Hévíz–Balaton Airport,SOB,66
+69,Keflavík Airport,KEF,67
+70,Akureyri Airport,AEY,68
+71,Egilsstaðir Airport,EGS,69
+72,Ísafjörður Airport,IFJ,70
+73,Dublin Airport,DUB,71
+74,Cork Airport,ORK,72
+75,Shannon Airport,SNN,73
+76,Knock Airport,NOC,74
+77,Kerry Airport,KIR,75
+78,Fiumicino “Leonardo da Vinci” Airport,FCO,76
+79,Ciampino Airport,CIA,76
+80,Malpensa Airport,MXP,77
+81,Linate Airport,LIN,77
+82,Bergamo/Orio al Serio Airport,BGY,77
+83,Marco Polo Airport,VCE,78
+84,Treviso Airport,TSF,78
+85,Capodichino Airport,NAP,79
+86,Guglielmo Marconi Airport,BLQ,80
+87,Turin Airport,TRN,81
+88,Falcone–Borsellino Airport,PMO,82
+89,Fontanarossa Airport,CTA,83
+90,Cristoforo Colombo Airport,GOA,84
+91,Karol Wojtyła Airport,BRI,85
+92,Valerio Catullo Airport,VRN,86
+93,Galileo Galilei Airport,PSA,87
+94,Amerigo Vespucci Airport,FLR,88
+95,Costa Smeralda Airport,OLB,89
+96,Papola Casale Airport,BDS,90
+97,Friuli Venezia Giulia Airport,TRS,91
+98,Pristina International Airport,PRN,92
+99,Riga International Airport,RIX,93
+100,Liepāja Airport,LPX,94
+101,Ventspils Airport,VNT,95
+102,Zurich Airport,ZRH,96
+103,Vilnius Airport,VNO,97
+104,Kaunas Airport,KUN,98
+105,Palanga Airport,PLQ,99
+106,Luxembourg Airport,LUX,100
+107,Malta International Airport,MLA,101
+108,Chișinău International Airport,RMO,102
+109,Bălți International Airport,BZY,103
+110,Podgorica Airport,TGD,104
+111,Tivat Airport,TIV,105
+112,Schiphol Airport,AMS,107
+113,Rotterdam The Hague Airport,RTM,108
+114,Maastricht Aachen Airport,MST,109
+115,Skopje Airport,SKP,110
+116,Ohrid Airport,OHD,111
+117,Gardermoen Airport,OSL,112
+118,Bergen Airport,BGO,113
+119,Stavanger Airport,SVG,114
+120,Chopin Airport,WAW,115
+121,Modlin Airport,WMI,115
+122,John Paul II Airport,KRK,116
+123,Copernicus Airport,WRO,117
+124,Lech Wałęsa Airport,GDN,118
+125,Ławica Airport,POZ,119
+126,Goleniów Airport,SZZ,120
+127,Pyrzowice Airport,KTW,121
+128,Lublin Airport,LUZ,122
+129,Rzeszów–Jasionka Airport,RZE,123
+130,Humberto Delgado Airport,LIS,124
+131,Francisco Sá Carneiro Airport,OPO,125
+132,Faro Airport,FAO,126
+133,Cristiano Ronaldo Airport,FNC,127
+134,João Paulo II Airport,PDL,128
+135,Henri Coandă Airport,OTP,129
+136,Avram Iancu Cluj Airport,CLJ,130
+137,Mihail Kogălniceanu Airport,CND,131
+138,Iași Airport,IAS,132
+139,Federico Fellini Airport,RMI,133
+140,Nikola Tesla Airport,BEG,134
+141,Constantine the Great Airport,INI,135
+142,Morava Airport,KVO,136
+143,M. R. Štefánik Airport,BTS,137
+144,Košice Airport,KSC,138
+145,Poprad–Tatry Airport,TAT,139
+146,Jože Pučnik Airport,LJU,140
+147,Edvard Rusjan Airport,MBX,141
+148,Edvard Rusjan Airport,MBX,142
+149,Barajas Airport,MAD,143
+150,El Prat Airport,BCN,144
+151,Valencia Airport,VLC,145
+152,Málaga Airport,AGP,146
+153,Alicante Airport,ALC,147
+154,San Pablo Airport,SVQ,148
+155,Bilbao Airport,BIO,149
+156,Zaragoza Airport,ZAZ,150
+157,Son Sant Joan Airport,PMI,151
+158,Región de Murcia Airport,RMU,152
+159,Arlanda Airport,ARN,153
+160,Bromma Airport,BMA,153
+161,Landvetter Airport,GOT,154
+162,Malmö Airport,MMX,155
+163,Stockholm Skavsta Airport,NYO,156
+164,Zürich Airport,ZRH,157
+165,Geneva Airport,GVA,158
+166,EuroAirport Basel–Mulhouse–Freiburg Airport,BSL,159
+167,Belp Airport,BRN,160
+168,Istanbul Airport,IST,161
+169,Sabiha Gökçen Airport,SAW,161
+170,Esenboğa Airport,ESB,162
+171,Adnan Menderes Airport,ADB,163
+172,Antalya Airport,AYT,164
+173,Dalaman Airport,DLM,165
+174,Milas–Bodrum Airport,BJV,166
+175,Boryspil Airport,KBP,167
+176,Zhuliany Airport,IEV,167
+177,Lviv Airport,LWO,168
+178,Odesa Airport,ODS,169
+179,Kharkiv Airport,HRK,170
+180,Heathrow Airport,LHR,171
+181,Gatwick Airport,LGW,171
+182,Stansted Airport,STN,171
+183,Luton Airport,LTN,171
+184,City Airport,LCY,171
+185,Southend Airport,SEN,171
+186,Manchester Airport,MAN,172
+187,Edinburgh Airport,EDI,173
+188,Birmingham Airport,BHX,174
+189,Glasgow Airport,GLA,175
+190,Liverpool John Lennon Airport,LPL,176
+191,Bristol Airport,BRS,177
+192,Newcastle upon Tyne Airport,NCL,178
+193,Fiumicino “Leonardo da Vinci” Airport,FCO,179
