@@ -20,7 +20,7 @@ public class MainApp extends Application {
 
     public static void main(String[] args) {
         try {
-            DatabaseUtil.resetDatabase(); // COMMENT IT!!!
+//            DatabaseUtil.resetDatabase(); // COMMENT IT!!!
         } catch (Exception e) {
             e.printStackTrace();
         }
