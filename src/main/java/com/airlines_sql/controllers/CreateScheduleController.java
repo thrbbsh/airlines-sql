@@ -226,7 +226,7 @@ public class CreateScheduleController {
 		if (targetDayOfWeek == null) throw new IllegalStateException("Invalid day of week string: " + dayOfWeekStr);
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			LocalDate today = LocalDate.now();
-			for (int i = 1; i <= 5; i++) {
+			for (int i = 0; i <= 15; i++) {
 				LocalDate futureDate = today.plusDays(i);
 				if (futureDate.getDayOfWeek() == targetDayOfWeek) {
 					LocalDateTime scheduledDeparture = LocalDateTime.of(futureDate, depTime);

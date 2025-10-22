@@ -143,7 +143,6 @@ CREATE TABLE flight_instance (
     real_price             DECIMAL(10, 2)
 );
 
--- ????
 CREATE TABLE flight_status_history (
     history_id  SERIAL PRIMARY KEY,
     instance_id INT NOT NULL REFERENCES flight_instance(instance_id),
@@ -512,7 +511,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER trg_check_aircraft_timing BEFORE INSERT ON flight_instance FOR EACH ROW EXECUTE FUNCTION check_aircraft_timing();
+CREATE TRIGGER trg_check_aircraft_timing BEFORE INSERT OR UPDATE ON flight_instance FOR EACH ROW EXECUTE FUNCTION check_aircraft_timing();
 
 CREATE OR REPLACE FUNCTION trg_check_schedule_validity() RETURNS TRIGGER AS
 $$
